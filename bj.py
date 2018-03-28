@@ -17,7 +17,7 @@ class blackjack(object):
             hand.append(carddealt)
             self.visiblecards.append(carddealt)
             #draw1
-        myhand = self.players[self.myposition][1]
+        #myhand = self.players[self.myposition][1]
         #print(myhand)
         #print(self.visiblecards)
         return(None)
@@ -26,7 +26,8 @@ class blackjack(object):
         return(myhand)
 
     def hit(self):
-        return(card)
+        #return(card)
+        pass
 
 if __name__ == '__main__':
     deckqty='5'
