@@ -18,8 +18,8 @@ class blackjack(object):
             self.visiblecards.append(carddealt)
             #draw1
         myhand = self.players[self.myposition][1]
-        print(myhand)
-        print(self.visiblecards)
+        #print(myhand)
+        #print(self.visiblecards)
         return(None)
     def CheckHand(self):
         myhand = self.players[self.myposition][1]
