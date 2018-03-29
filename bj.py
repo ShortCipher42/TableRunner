@@ -14,9 +14,21 @@ class blackjack(object):
             self.players.append([str(addp),[]])
         for p,hand in self.players:
             carddealt=self.dealer.DealCards(1)
+            for val in carddealt:
+                carddealt = val
             hand.append(carddealt)
             self.visiblecards.append(carddealt)
             #draw1
+        for p,hand in self.players:
+            carddealt=self.dealer.DealCards(1)
+            for val in carddealt:
+                carddealt = val
+            hand.append(carddealt)
+            if(p is self.players[self.myposition][0]):
+                self.visiblecards.append(carddealt)
+            else:
+                pass
+            #self.visiblecards.append(carddealt)    
         #myhand = self.players[self.myposition][1]
         #print(myhand)
         #print(self.visiblecards)
