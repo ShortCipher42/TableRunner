@@ -6,6 +6,16 @@ def facecards(numlist):
             if(val == 'K') or ('Q') or ('J'):
                 numlist[n] = 10
     return(numlist)
+
+def aces(numlist):
+    numlists = []
+    if 'A' in numlist:
+        pass
+    if 'A' not in numlist:
+        numlists = numlist
+        pass
+    return(numlists)
+    
 class blackjack(object):
     def __init__(self,playernum,myposition=1,deckqty=1):
         self.dealer = D.Shuffle(deckqty)
@@ -49,7 +59,6 @@ class blackjack(object):
             num,suit = val.split('-')
             handnums.append(num)
         return(handnums)
-
 
     def hit(self,playerpos):
         self.players[playerpos][1].append(self.dealer.DealCards(1))
