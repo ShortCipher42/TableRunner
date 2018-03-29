@@ -10,9 +10,12 @@ def facecards(numlist):
 def aces(numlist):
     numlists = []
     if 'A' in numlist:
+        aqty = numlist.count('A')
+        finallen = 2**aqty
+        
         pass
     if 'A' not in numlist:
-        numlists = numlist
+        numlists = numlists.append(numlist)
         pass
     return(numlists)
     
