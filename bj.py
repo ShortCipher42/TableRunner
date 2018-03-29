@@ -11,8 +11,21 @@ def aces(numlist):
     numlists = []
     if 'A' in numlist:
         aqty = numlist.count('A')
+        filler = []
         finallen = 2**aqty
-        
+        while len(numlists) < finallen:
+            numlists.append(filler)
+        for val in numlist:
+            if val is not 'A':
+                n=0
+                while(n>finallen):
+                    numlists[n].append(val)
+                    n=n+1
+            if val is 'A':
+                n=0
+                ###########INSERT HANDLING FOR ACES HERE ONCE YOU FIGURE OUT HOW TO SPLIT 1 and 11s
+
+                
         pass
     if 'A' not in numlist:
         numlists = numlists.append(numlist)
