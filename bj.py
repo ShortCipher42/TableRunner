@@ -1,10 +1,13 @@
 import Dealer as D
 import numpy as np
+import math
 
 def facecards(numlist):
     for n,val in enumerate(numlist):
-            if(val == 'K') or ('Q') or ('J'):
+            if(val == 'K') or (val == 'Q') or (val =='J'):
                 numlist[n] = 10
+            else:
+                numlist[n] = numlist[n]
     return(numlist)
 
 def aces(numlist):
@@ -13,22 +16,34 @@ def aces(numlist):
         aqty = numlist.count('A')
         filler = []
         finallen = 2**aqty
+        an = 1
         while len(numlists) < finallen:
             numlists.append(filler)
         for val in numlist:
             if val is not 'A':
                 n=0
-                while(n>finallen):
+                while(n+1<finallen):
                     numlists[n].append(val)
                     n=n+1
-            if val is 'A':
+            else:
                 n=0
                 ###########INSERT HANDLING FOR ACES HERE ONCE YOU FIGURE OUT HOW TO SPLIT 1 and 11s
-
-                
+                while(n<finallen):
+                    checker = math.ceil((n+1)/an)
+                    #ODDEVEN IF ELIF ELSE ON CHECKER
+                    if checker % 2 == 0:
+                        aceval = 11
+                        pass #Even
+                    else:
+                        aceval = 1
+                        pass #Odd
+                    numlists[n].append(aceval)
+                    n = n+1    
+                an=an+1
         pass
-    if 'A' not in numlist:
-        numlists = numlists.append(numlist)
+    else:
+        numlists = numlist
+        print("NO ACES")
         pass
     return(numlists)
     
