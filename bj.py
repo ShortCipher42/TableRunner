@@ -33,10 +33,15 @@ class blackjack(object):
         #print(myhand)
         #print(self.visiblecards)
         return(None)
-    def CheckHand(self):
+    def checkhand(self):
         myhand = self.players[self.myposition][1]
         return(myhand)
-
+    def splitnumbers(self,playerpos):
+        handnums = []
+        for val in self.players[playerpos][1]:
+            num,suit = val.split('-')
+            handnums.append(num)
+        return(handnums)
     def hit(self):
         #return(card)
         #test2
