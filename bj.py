@@ -27,6 +27,7 @@ class blackjack(object):
 
     def hit(self):
         #return(card)
+        #test2
         pass
 
 if __name__ == '__main__':
