@@ -27,9 +27,7 @@ def aces(numlist):
                     n=n+1
             else:
                 q=0
-                ###########INSERT HANDLING FOR ACES HERE ONCE YOU FIGURE OUT HOW TO SPLIT 1 and 11s
                 while(q<len(numlists)):
-                    #print(numlists)
                     checker = math.ceil((q+1)/(2**(an-1)))
                     templist = []
                     templist = list(numlists[q])
@@ -37,24 +35,15 @@ def aces(numlist):
                     if ((checker % 2) == 0):
                         aceval = 11
                         templist.append(aceval)
-                        print("even")
                         #Even
                     elif(((checker % 2) != 0)):
                         aceval = 1
                         templist.append(aceval)
-                        print("odd")
                         #Odd
                     else:
                         print("dude I don't know")
                         pass
-                    #numlists[n].append(aceval)
-                    print("numlists =" , numlists)
-                    print("templist =" , templist)
-                    #print(n)
                     numlists[q] = list(templist)
-                    print(numlists)
-                    #print(n)
-                    #print(aceval)
                     q = q+1    
                 an=an+1
         pass
