@@ -1,6 +1,11 @@
 import Dealer as D
 import numpy as np
 
+def facecards(numlist):
+    for n,val in enumerate(numlist):
+            if(val == 'K') or ('Q') or ('J'):
+                numlist[n] = 10
+    return(numlist)
 class blackjack(object):
     def __init__(self,playernum,myposition=1,deckqty=1):
         self.dealer = D.Shuffle(deckqty)
@@ -33,16 +38,21 @@ class blackjack(object):
         #print(myhand)
         #print(self.visiblecards)
         return(None)
+
     def checkhand(self):
         myhand = self.players[self.myposition][1]
         return(myhand)
-    def splitnumbers(self,playerpos):
+
+    def splitnums(self,playerpos):
         handnums = []
         for val in self.players[playerpos][1]:
             num,suit = val.split('-')
             handnums.append(num)
         return(handnums)
-    def hit(self):
+
+
+    def hit(self,playerpos):
+        self.players[playerpos][1].append(self.dealer.DealCards(1))
         #return(card)
         #test2
         pass
